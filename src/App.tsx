@@ -1,3 +1,4 @@
+import './App.css'
 import ReactECharts from 'echarts-for-react'
 import { useCallback, useMemo, useState } from 'react'
 import ScreenShotByElement from './components/ScreenShotByElement'

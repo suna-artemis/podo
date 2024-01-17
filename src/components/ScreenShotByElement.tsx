@@ -24,7 +24,14 @@ const ScreenShotByElement = (props: ScreenShotByElementProps) => {
 
       setTimeout(() => {
         domToImage
-          .toPng(document.querySelector(selector))
+          .toPng(document.querySelector(selector), {
+            bgcolor: 'white',
+            style: {
+              border: 'none',
+              margin: 0,
+              'background-color': 'white',
+            },
+          })
           .then((dataURL: any) => {
             console.debug('take a screenshot of the element.')
             onDataURLObtained(dataURL)
@@ -34,7 +41,7 @@ const ScreenShotByElement = (props: ScreenShotByElementProps) => {
   }, [])
   const { element } = props
 
-  return <div className='fixed w-[100%] left-[100%]'>{element}</div>
+  return <div>{element}</div>
 }
 
 export default ScreenShotByElement
